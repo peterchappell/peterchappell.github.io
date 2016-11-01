@@ -7,8 +7,14 @@ intro: Oomph have created a publishing system that makes it easy to create iPad 
 quote: Just wanted to thank you for the work you did on the report. The guys ... [have] mandated it's reading across all the devs! :) They said they really liked the way there are principles they can apply elsewhere. So another big thanks!
 quoted_by: Oomph Chief Technologist
 screenshots:
-  - src: oomph-1.jpg
+  - src: oomph-main.jpg
     alt: A sample photo of the rough wireframes used for consultancy.
+  - src: oomph-1.jpg
+    alt: A sample page from a report
+  - src: oomph-2.jpg
+    alt: A sample page from a report
+  - src: oomph-3.jpg
+    alt: A sample page workflow diagram
 ---
 
 ## My contributions

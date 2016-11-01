@@ -7,6 +7,12 @@ intro: SAMS is a web application used for remotely monitoring and controlling la
 quote: When we started working on SAMS we had no idea that we’d be able to create something so app-like and user-friendly. It’s clear, fast and it works well on both desktop and mobile devices.
 quoted_by: Director of Software Engineering, Acubis
 screenshots:
+  - src: sams-main.jpg
+    alt: Close up of the map view of devices
+  - src: sams-1.jpg
+    alt: Mobile view of a device detail dashboard screen
+  - src: sams-3.jpg
+    alt: Desktop dashboard view
   - src: sams-2.jpg
     alt: A typical device dashboard page from SAMS.
 ---

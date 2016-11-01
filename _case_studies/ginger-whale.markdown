@@ -13,6 +13,8 @@ screenshots:
     alt: Ginger Whale home page in a desktop viewport
   - src: gingerwhale-2.jpg
     alt: Ginger Whale home page in a mobile viewport showing featured stories
+  - src: gingerwhale-3.jpg
+    alt: A Ginger Whale story page on a mobile device
 ---
 
 ## My contributions

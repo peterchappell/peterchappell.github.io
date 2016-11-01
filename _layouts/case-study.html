@@ -17,15 +17,15 @@
 
         <section class="main">
             <header>
-                <nav class="site-title case-study-site-title"><a href="/"><span>Pete Chappell Portfolio</span></a></nav>
+                <nav class="site-title case-study-site-title"><a href="/">Pete Chappell <span>Portfolio</span></a></nav>
                 <h1 class="case-study-page-title">{{page.title}}</h1>
             </header>
-            <footer>
+            <footer class="case-study-footer">
                 {% if page.web %}
                     <p>Website: <a href="{{page.web}}" class="web">{{page.web}}</a></p>
                 {% endif %}
                 {% if page.github %}
-                    <p>Github: <a href="{{page.github}}" class="web">{{page.github}}</a></p>
+                    <p>Github: <a href="{{page.github}}" class="github">{{page.github}}</a></p>
                 {% endif %}
             </footer>
 
@@ -33,9 +33,16 @@
 
             {% if page.screenshots %}
             <aside class="case-study-page-screenshots">
-            {% for image in page.screenshots %}
-                <img src="/images/{{image.src}}" alt="{{image.alt}}" />
-            {% endfor %}
+                <div class="container">
+                {% for image in page.screenshots %}
+                    <img src="/images/{{image.src}}" alt="{{image.alt}}" />
+                {% endfor %}
+                </div>
+                <footer>
+                    <svg class="icon icon-arrow-left2"><use xlink:href="#icon-arrow-left2"></use></svg>
+                    <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg>
+                    (Scroll or swipe left and right)
+                </footer>
             </aside>
             {% endif %}
 
@@ -53,11 +60,12 @@
             </div>
 
             <footer class="case-study-page-footer">
-                <nav><a href="/">See more of Pete Chappell's portfolio</a></nav>
+                <nav><a href="/"><svg class="icon icon-arrow-left2"><use xlink:href="#icon-arrow-left2"></use></svg>See more of Pete Chappell's portfolio</a></nav>
             </footer>
 
         </section>
-        <!-- <script src="js/main.js"></script> -->
+        
+        {% include icons.html %}
 
     </body>
 </html>
