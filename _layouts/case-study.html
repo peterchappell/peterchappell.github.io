@@ -29,7 +29,7 @@
                 {% endif %}
             </footer>
 
-            <p class="case-study-page-intro">{{ page.intro }}</p>
+            <p class="case-study-page-intro">{{ page.intro | markdownify }}</p>
 
             {% if page.screenshots %}
             <aside class="case-study-page-screenshots">
@@ -41,7 +41,10 @@
                 <footer>
                     <svg class="icon icon-arrow-left2"><use xlink:href="#icon-arrow-left2"></use></svg>
                     <svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg>
-                    (Scroll or swipe left and right)
+                    Scroll or swipe horizontally. 
+                    {% if page.web %}
+                    Or you could <a href="{{page.web}}">take a look at the real thing</a>.
+                    {% endif %}
                 </footer>
             </aside>
             {% endif %}
