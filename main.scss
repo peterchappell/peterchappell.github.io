@@ -1,0 +1,158 @@
+---
+---
+@import "normalize";
+@import "typography";
+
+
+body {
+	background-color: #f5f5f5;
+	color: #041531;
+}
+
+img {
+	max-width: 100%;
+}
+
+a, a:visited {
+	color: #2196F3;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #1565C0;
+	text-decoration: underline;
+}
+
+a:active {
+	color: #0D47A1;
+}
+
+.site-title {
+	font-family: 'Roboto Slab', serif;
+	line-height: 1.25;
+	font-size: 2em;
+	font-weight: 400;
+	margin: 0;
+	span {
+		display: block;
+		font-size: 0.5em;
+		font-weight: 100;
+	}
+	a {
+		text-decoration: none;
+	}
+}
+
+.case-study-site-title span {
+	font-weight: 400;
+}
+
+.site-footer-home {
+	clear: both;
+	margin-top: 3em;
+}
+
+.home-intro {
+	margin-top: 3em;
+}
+
+.profile-pic {
+	border-radius: 50%;
+	float: right;
+	margin: 0 20px 20px;
+	max-height: 160px;
+}
+
+.profile-links {
+	list-style-type: none;
+	margin-bottom: 3em;
+	padding: 0;
+	li {
+		display: inline-block;
+		margin-right: 1em;
+		white-space: nowrap;
+	}
+}
+
+.main {
+	margin: 0 auto;
+	max-width: 900px;
+	padding: 20px;
+}
+
+.case-studies-list {
+	margin-bottom: -20px;
+	margin-top: 3em;
+	max-width: 700px;
+	overflow: hidden;
+}
+
+.case-study-listing-item {
+	display: block;
+	float: left;
+	margin: 0;
+	text-align: center;
+	width: 50%;
+	h1 {
+		font-family: 'Roboto', sans-serif;
+		font-size: 1em;
+	}
+	article {
+		margin: 0 20px 20px 0;
+	}
+	img {
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+	}
+}
+
+@media (min-width: 420px) {
+	.case-study-listing-item {
+		width: 40%;
+	}
+}
+
+@media (min-width: 600px) {
+	.case-study-listing-item {
+		width: 25%;
+	}
+}
+
+
+
+
+.case-study-page-title {
+	font-weight: 400;
+}
+
+.case-study-page-intro {
+	margin-top: 3em;
+	max-width: 700px;
+}
+
+.case-study-page-screenshots {
+	img {
+		margin: 0 5px 5px 0;
+		max-height: 160px;
+	}
+}
+
+.case-study-page-quote {
+	border-bottom: 2px solid #9FA8DA;
+	border-top: 2px solid #9FA8DA;
+	color: #0D47A1;
+    font-size: 1.3333em;
+    margin: 3em 0;
+    max-width: 66.666%;
+    padding: 20px 0;
+    cite {
+    	font-size: 16px;
+    }
+}
+
+.case-study-page-content {
+	max-width: 700px;
+}
+
+.case-study-page-footer {
+	margin-top: 3em;
+}

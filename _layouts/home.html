@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>{{page.title}}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Slab:100,400" rel="stylesheet">
+        <link rel="stylesheet" href="/main.css">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <section class="main">
+            <header class="site-header-home">
+                <h1 class="site-title"><a href="/">Pete Chappell <span>Portfolio</span></a></h1>
+            </header>
+
+            <div class="home-intro">
+            <img src="/images/petechappell.jpg" alt="photo of Pete Chappell" class="profile-pic" />
+            <p>{{ page.content | xml_escape }}</p>
+            </div>
+
+            <ul class="profile-links">
+                <li class="linkedIn"><a href="https://www.linkedin.com/in/pete-chappell-6430a319">View my LinkedIn profile</a></li>
+                <li class="github"><a href="https://github.com/peterchappell">View my Github profile</a></li>
+                <li class="cv"><a href="/PeteChappell-CV.pdf">Download my CV</a></li>
+            </ul>
+
+            <section class="case-studies-list">
+                <header>
+                    <h1>Some examples of my work</h1>
+                </header>
+                {% for caseStudy in site.case_studies %}
+                    <a href="{{caseStudy.url}}" class="case-study-listing-item">
+                        <article>
+                            <image src="/images/{{caseStudy.main_image_thumb}}" alt="" />
+                            <header>
+                                <h1>{{caseStudy.title}}</h1>
+                            </header>
+                        </article>
+                    </a>
+                {% endfor %}
+            </section>
+
+            <footer class="site-footer-home">
+                <h2 class="h1">Find out more...</h2>
+                <p>If you'd like to find out more about me, feel free to email <a href="mailto:peter@experiencebureau.com">peter@experiencebureau.com</a> or call +353 871 667687.</p>
+            </footer>
+
+        </section>
+
+        <!-- <script src="js/main.js"></script> -->
+
+    </body>
+</html>

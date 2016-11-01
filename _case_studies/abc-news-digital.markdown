@@ -1,0 +1,54 @@
+---
+layout: case-study
+title: ABC News Digital
+main_image_thumb: abc-news-main.jpg
+web: http://www.abc.net.au
+intro: I've been working for the Digital News division of the Australian Broadcasting Corporation (ABC) for the past two and a half years. During that time I've worked on a variety of projects including localisation of the home page, a "from other news sites" module, and a porting of the content across to Apple News. More recently I was heavily involved in transitioning the news website to a new templating framework and CMS structure.
+quote: Pete has outstanding technical skills, a great eye for design and is an excellent communicator. Best of all, Pete has the absolute highest level of integrity. Pete is a joy to work with...
+quoted_by: Lead Developer, ABC News Online
+quote_style: centre
+screenshots:
+  - src: abc-news-1.jpg
+    alt: The ABC News home page
+---
+
+## Some of the projects I worked on for ABC News
+
+### Ongoing site maintainence
+
+On a site as big as ABC News there is always a lot of work to do just to keep up with changes in technology and social media etc. I helped out with the day to day running of the site as well as making improvements to site speed and page weight, accessibility, development processes, editorial workflow improvements and more.
+
+### Localisation of the news home page
+
+One of the bigger initiatives on the ABC News website involved integrating local, regional and state news content into the main home page. I built some UI that allows users to set their location. A location section and weather widget is presented in the banner area to confirm the action and provide immediate feedback. Knowing which location is set means that we can then provide a different edition of the main stories on the home page.
+
+### Apple News
+
+Apple News was released in September 2015. Content produced in the Apple News Format (as opposed to an RSS feed) was more likely to do well - especially in the initial release of the product. I helped work on a solution that creates content bundles (in the Apple News JSON format) as part of the web publishing system. 
+
+### From other news sites module
+
+In 2014, ABC News Digital introduced a new feature to some of their articles. For some articles, content producers are able to include a “From other news sites” module that lists related stories from other news providers. I helped build a solution that searches other news sites, filters the results and enables them to be added to the bottom of articles when an editor chooses to do so.
+
+### CMS Transition project
+
+The ABC News website runs on a stack that includes a Java web application and a templating framework. The website is currently being upgraded to use a "phase 2" of the system which involves (amongst many other things) transitioning to a new templating framework. The new phase 2 templates are being developed to inherit from a parent default theme and override it when necessary. The new templates are fully responsive. In the longer-term future a The ABC DLS (Design Language System) will be rolled out using a new default theme. The development and input from the DLS project (as well as many other ABC-wide developments) had to be taken into account throughout the transition project.
+
+### Live blogging system
+
+ABC News use a third party live blogging system. I helped build a custom implementation of the live blog embed using the API provided by the system. The new embed worked on both mobile and desktop and was styled to be more closely integrated with the rest of the site.
+
+## My contributions
+
+* Senior developer (team lead on some projects etc)
+* Front-end development 
+* Building services and modules
+* Liasing between content and development
+
+## Technology I used
+
+* JavaScript, HTML and CSS
+* Node
+* Go
+* Core Media (CMS)
+* Other tools as required
