@@ -26,7 +26,7 @@ export const query = graphql`
 
 export default function Projects({ data }) {
   return (
-    <Layout>
+    <Layout isContentPadded>
       <h2>Projects</h2>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>

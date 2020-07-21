@@ -1,4 +1,13 @@
-start,end,title,description,url,type
-2020,,Professional Diploma in UX,,,qualification
-2020,,Certificate 6 in Counselling and Psychotherapy,,,qualification
-2003,2008,Designer,Working on travel websites,work
+start,end,title,company,description,url,type
+2020,,Professional Diploma in UX,UXDI,,,qualification
+2020,,Certificate 6 in Counselling and Psychotherapy,IICP,,,qualification
+2017,2019,Front-end Engineer,Intellum,Working on Intellum's suite of Learning Management software.,https://www.intellum.com/,job
+2014,2016,Front-end Developer,Australian Broadcasting Corporation (ABC),"Developer working primarily on the ABC News website. Specialising in JavaScript development and interactivity to help improve the website experience.",https://www.abc.net.au/news/,job
+2013,2015,Co-organiser,Thought Fort,"Co-organiser and manager of a co-working space in Brisbane.",http://thoughtfort.com.au/,job
+2010,2014,Freelance designer/developer,Experience Bureau,"Specialising in user interface and user experience for a wide range of websites and applications.",http://experiencebureau.com/,job
+2009,2011,Web and graphic designer,Cambia,"Graphic and web design as well as wireframes, conceptual designs and prototypes for various projects.",https://cambia.org/,job
+2009,,UI Designer,Creative Designer Software,"UI design and development for a new release of a 3D home modelling application.",,job
+2003,2008,Web Designer,Zolv,"Website designer on UK holiday websites including Virgin Holidays, Teletext Holidays and others.",https://www.zolv.com/,job
+1999,2003,Web Designer,Digicon,"Website designer on a range of Government and business websites",,job
+1998,2002,Bachelor of Multimedia,"Griffith University, Brisbane, Australia",,,qualification
+1993,1996,Bachelor of Science,"University of Queensland, Brisbane, Australia",,,qualification

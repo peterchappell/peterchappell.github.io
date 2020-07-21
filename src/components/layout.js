@@ -6,17 +6,7 @@ import { rhythm } from "../utils/typography";
 import Header from "./header";
 import "./layout.css";
 
-const outerContainer = css({
-  display: "flex",
-  height: "100%",
-});
-
-const mainContainer = css({
-  flexBasis: "100%",
-  padding: rhythm(2),
-});
-
-const Layout = ({ children }) => {
+const Layout = ({ children, isContentPadded }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,6 +16,17 @@ const Layout = ({ children }) => {
       }
     }
   `);
+
+  const outerContainer = css({
+    position: "relative",
+  });
+
+  const mainContainer = css({
+    backgroundColor: "#fff",
+    marginLeft: "33.3333%",
+    minHeight: "100vh",
+    padding: isContentPadded ? rhythm(2) : 0,
+  });
 
   return (
     <section css={outerContainer}>

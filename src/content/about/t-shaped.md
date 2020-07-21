@@ -3,4 +3,9 @@ title: "T-Shaped"
 slug: "tshaped"
 ---
 
-A T-shaped front-end engineer...
+## T-Shaped skill set
+
+- Deep knowledge combined with a broad experience.
+- Works well in a cross-functional team.
+- Able to balance design, engineering and business needs.
+- Building empathy and understanding within the team.

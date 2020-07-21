@@ -4,11 +4,27 @@ import { css } from "@emotion/core";
 import { rhythm } from "../utils/typography";
 
 import Layout from "../components/layout";
-import Image from "../components/image";
 import SEO from "../components/seo";
 
 const section = css({
-  padding: `${rhythm(2)} 0`,
+  alignItems: "center",
+  display: "flex",
+});
+
+const sectionContent = css({
+  alignItems: "center",
+  flexBasis: "50%",
+  flexShrink: 1,
+  padding: `0 ${rhythm(2)} 0 0`,
+});
+
+const graphic = css({
+  alignItems: "center",
+  display: "flex",
+  flexBasis: "50%",
+  flexShrink: 1,
+  height: "100vh",
+  justifyContent: "center",
 });
 
 const IndexPage = () => {
@@ -39,29 +55,33 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <h2>A front-end engineer with...</h2>
+      <article id="broad" css={section}>
+        <div css={graphic}>
+          <div>—</div>
+        </div>
+        <div
+          css={sectionContent}
+          dangerouslySetInnerHTML={{ __html: mappedData.range.html }}
+        />
+      </article>
 
-      <article
-        id="broad"
-        css={section}
-        dangerouslySetInnerHTML={{ __html: mappedData.range.html }}
-      />
+      <article id="broad" css={section}>
+        <div css={graphic}>
+          <div>|</div>
+        </div>
+        <div
+          css={sectionContent}
+          dangerouslySetInnerHTML={{ __html: mappedData.depth.html }}
+        />
+      </article>
 
-      <article
-        id="broad"
-        css={section}
-        dangerouslySetInnerHTML={{ __html: mappedData.depth.html }}
-      />
-
-      <article
-        id="tshaped"
-        css={section}
-        dangerouslySetInnerHTML={{ __html: mappedData.tshaped.html }}
-      />
-
-      <div style={{ maxWidth: `300px` }}>
-        <Image />
-      </div>
+      <article id="broad" css={section}>
+        <div css={graphic}>T</div>
+        <div
+          css={sectionContent}
+          dangerouslySetInnerHTML={{ __html: mappedData.tshaped.html }}
+        />
+      </article>
     </Layout>
   );
 };
