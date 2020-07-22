@@ -2,6 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import { css } from "@emotion/core";
 import { rhythm } from "../utils/typography";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -30,11 +31,9 @@ const graphic = css({
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query AboutContent {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/(about)/.*\\\\.md$/" } }
-      ) {
+      allMdx(filter: { fileAbsolutePath: { regex: "/(about)/.*\\\\.md$/" } }) {
         nodes {
-          html
+          body
           frontmatter {
             title
             slug
@@ -44,13 +43,10 @@ const IndexPage = () => {
     }
   `);
 
-  const mappedData = data.allMarkdownRemark.nodes.reduce(
-    (accumulator, itemObj) => {
-      accumulator[itemObj.frontmatter.slug] = itemObj;
-      return accumulator;
-    },
-    {}
-  );
+  const mappedData = data.allMdx.nodes.reduce((accumulator, itemObj) => {
+    accumulator[itemObj.frontmatter.slug] = itemObj;
+    return accumulator;
+  }, {});
 
   return (
     <Layout>
@@ -59,28 +55,25 @@ const IndexPage = () => {
         <div css={graphic}>
           <div>—</div>
         </div>
-        <div
-          css={sectionContent}
-          dangerouslySetInnerHTML={{ __html: mappedData.range.html }}
-        />
+        <div css={sectionContent}>
+          <MDXRenderer>{mappedData.range.body}</MDXRenderer>
+        </div>
       </article>
 
       <article id="broad" css={section}>
         <div css={graphic}>
           <div>|</div>
         </div>
-        <div
-          css={sectionContent}
-          dangerouslySetInnerHTML={{ __html: mappedData.depth.html }}
-        />
+        <div css={sectionContent}>
+          <MDXRenderer>{mappedData.depth.body}</MDXRenderer>
+        </div>
       </article>
 
       <article id="broad" css={section}>
         <div css={graphic}>T</div>
-        <div
-          css={sectionContent}
-          dangerouslySetInnerHTML={{ __html: mappedData.tshaped.html }}
-        />
+        <div css={sectionContent}>
+          <MDXRenderer>{mappedData.tshaped.body}</MDXRenderer>
+        </div>
       </article>
     </Layout>
   );

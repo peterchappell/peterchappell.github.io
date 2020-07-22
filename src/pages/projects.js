@@ -7,9 +7,7 @@ import { rhythm } from "../utils/typography";
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(projects)/.*\\\\.md$/" } }
-    ) {
+    allMdx(filter: { fileAbsolutePath: { regex: "/(projects)/.*/" } }) {
       edges {
         node {
           frontmatter {
@@ -39,8 +37,12 @@ export const query = graphql`
 const projectItem = css({
   border: "1px solid #ccc",
   borderRadius: "5px",
-  margin: `${rhythm(1)} 0`,
+  breakInside: "avoid",
   padding: rhythm(1),
+});
+
+const projectsGrid = css({
+  columns: `2 auto`,
 });
 
 export default function Projects({ data }) {
@@ -54,16 +56,18 @@ export default function Projects({ data }) {
   return (
     <Layout isContentPadded>
       <h2>Projects</h2>
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id} css={projectItem}>
-          <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-          <p>
-            <em>{node.frontmatter.type}</em>
-          </p>
-          {displayImage(node)}
-          <p>{node.frontmatter.excerpt}</p>
-        </div>
-      ))}
+      <div css={projectsGrid}>
+        {data.allMdx.edges.map(({ node }) => (
+          <div key={node.id} css={projectItem}>
+            <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+            <p>
+              <em>{node.frontmatter.type}</em>
+            </p>
+            {displayImage(node)}
+            <p>{node.frontmatter.excerpt}</p>
+          </div>
+        ))}
+      </div>
     </Layout>
   );
 }

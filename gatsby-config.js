@@ -1,3 +1,5 @@
+const projectImagesHeight = 300;
+
 module.exports = {
   siteMetadata: {
     title: `Pete Chappell`,
@@ -42,7 +44,35 @@ module.exports = {
         icon: `src/images/petechappell.jpg`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [".mdx", ".md"],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: null,
+              rel: "nofollow noopener noreferrer external",
+            },
+          },
+          "gatsby-remark-unwrap-images",
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 400,
+              linkImagesToOriginal: false,
+              wrapperStyle: fluidResult => `
+                display: inline-block;
+                width: ${fluidResult.aspectRatio * projectImagesHeight}px;
+                height: ${projectImagesHeight}px;
+                margin-right: 10px;
+              `,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
