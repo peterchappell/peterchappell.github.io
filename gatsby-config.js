@@ -52,7 +52,7 @@ module.exports = {
           {
             resolve: "gatsby-remark-external-links",
             options: {
-              target: null,
+              target: "_blank",
               rel: "nofollow noopener noreferrer external",
             },
           },
@@ -65,8 +65,9 @@ module.exports = {
               wrapperStyle: fluidResult => `
                 display: inline-block;
                 width: ${fluidResult.aspectRatio * projectImagesHeight}px;
-                height: ${projectImagesHeight}px;
+                max-height: ${projectImagesHeight}px;
                 margin-right: 10px;
+                vertical-align: top;
               `,
             },
           },

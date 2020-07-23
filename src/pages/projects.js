@@ -7,7 +7,10 @@ import { rhythm } from "../utils/typography";
 
 export const query = graphql`
   query {
-    allMdx(filter: { fileAbsolutePath: { regex: "/(projects)/.*/" } }) {
+    allMdx(
+      filter: { fileAbsolutePath: { regex: "/(projects)/.*/" } }
+      sort: { fields: frontmatter___order }
+    ) {
       edges {
         node {
           frontmatter {
@@ -38,6 +41,8 @@ const projectItem = css({
   border: "1px solid #ccc",
   borderRadius: "5px",
   breakInside: "avoid",
+  display: "inline-block",
+  marginBottom: rhythm(1),
   padding: rhythm(1),
 });
 

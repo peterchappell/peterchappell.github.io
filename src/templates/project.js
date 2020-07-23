@@ -8,6 +8,7 @@ import { MDXProvider } from "@mdx-js/react";
 
 import Gallery from "../components/gallery";
 import ProjectLink from "../components/projectLink";
+import Quote from "../components/quote";
 
 export const query = graphql`
   query($slug: String!) {
@@ -15,6 +16,7 @@ export const query = graphql`
       body
       frontmatter {
         title
+        timeFrame
         type
         url
         repo
@@ -27,9 +29,21 @@ const headerClass = css({
   marginBottom: rhythm(2),
 });
 
+const metaStyle = css({
+  display: "flex",
+  fontStyle: "italic",
+  "> dd": {
+    marginRight: "1em",
+  },
+  "> dt": {
+    marginRight: "0.5em",
+  },
+});
+
 const shortcodes = {
   Gallery,
   ProjectLink,
+  Quote,
 };
 
 export default function Project({ data }) {
@@ -40,40 +54,40 @@ export default function Project({ data }) {
       <header css={headerClass}>
         <Link to="/projects">Projects</Link>
         <h2>{project.frontmatter.title}</h2>
-        <em>
-          Type:
-          {` `}
-          {project.frontmatter.type}
-          {` `}
+        <dl css={metaStyle}>
+          <dt>Type</dt>
+          <dd>{project.frontmatter.type}</dd>
+          <dt>Timeframe</dt>
+          <dd>{project.frontmatter.timeFrame}</dd>
           {project.frontmatter.url && (
             <>
-              URL:
-              {` `}
-              <a
-                href={project.frontmatter.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {project.frontmatter.url}
-              </a>
-              {` `}
+              <dt>URL</dt>
+              <dd>
+                <a
+                  href={project.frontmatter.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Link
+                </a>
+              </dd>
             </>
           )}
           {project.frontmatter.repo && (
             <>
-              Code:
-              {` `}
-              <a
-                href={project.frontmatter.repo}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {project.frontmatter.repo}
-              </a>
-              {` `}
+              <dt>Code</dt>
+              <dd>
+                <a
+                  href={project.frontmatter.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Github
+                </a>
+              </dd>
             </>
           )}
-        </em>
+        </dl>
       </header>
 
       <div>

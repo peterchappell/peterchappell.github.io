@@ -5,10 +5,11 @@ import { rhythm } from "../utils/typography";
 import { projectImagesHeight } from "../utils/consts";
 
 const gallery = css({
+  backgroundColor: "#fafafa",
   marginBottom: rhythm(1),
   maxWidth: "100%",
   overflowX: "auto",
-  paddingBottom: "20px",
+  padding: "10px 10px 20px",
 });
 
 const galleryGrid = css({
