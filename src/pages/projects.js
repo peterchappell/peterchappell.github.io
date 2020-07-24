@@ -17,7 +17,7 @@ export const query = graphql`
             title
             order
             type
-            excerpt
+            timeFrame
             featuredImage {
               childImageSharp {
                 fluid(maxWidth: 400) {
@@ -37,17 +37,43 @@ export const query = graphql`
   }
 `;
 
-const projectItem = css({
-  border: "1px solid #ccc",
-  borderRadius: "5px",
-  breakInside: "avoid",
-  display: "inline-block",
-  marginBottom: rhythm(1),
-  padding: rhythm(1),
+const projectsGrid = css({
+  display: "grid",
+  gridGap: rhythm(2),
+  gridTemplateColumns: "repeat(auto-fill, minmax(255px, 1fr))",
+  gridAutoRows: "minmax(100px, auto)",
+  margin: 0,
 });
 
-const projectsGrid = css({
-  columns: `2 auto`,
+const projectItem = css({
+  display: "flex",
+  flexDirection: "column",
+});
+
+const projectItemImage = css({
+  display: "block",
+  height: "150px",
+  overflow: "hidden",
+});
+
+const projectItemTitle = css({
+  textDecoration: "none",
+  "&:link, &:hover, &:active, &:visited": {
+    textDecoration: "none",
+  },
+});
+
+const projectItemMeta = css({
+  display: "flex",
+  margin: 0,
+  dt: {
+    display: "none",
+  },
+  dd: {
+    color: "#666",
+    fontSize: "0.8em",
+    margin: `0 ${rhythm(0.5)} 0 0`,
+  },
 });
 
 export default function Projects({ data }) {
@@ -60,19 +86,33 @@ export default function Projects({ data }) {
 
   return (
     <Layout isContentPadded>
-      <h2>Projects</h2>
-      <div css={projectsGrid}>
+      <h2>My Work</h2>
+      <ul css={projectsGrid}>
         {data.allMdx.edges.map(({ node }) => (
-          <div key={node.id} css={projectItem}>
-            <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
-            <p>
-              <em>{node.frontmatter.type}</em>
-            </p>
-            {displayImage(node)}
-            <p>{node.frontmatter.excerpt}</p>
-          </div>
+          <li key={node.id} css={projectItem}>
+            <Link
+              to={node.fields.slug}
+              css={projectItemTitle}
+              style={{ order: 6 }}
+            >
+              <h3>{node.frontmatter.title}</h3>
+            </Link>
+            <dl css={projectItemMeta} style={{ order: 9 }}>
+              <dt>Type</dt>
+              <dd>{node.frontmatter.type}</dd>
+              <dt>Timeframe</dt>
+              <dd>{node.frontmatter.timeFrame}</dd>
+            </dl>
+            <Link
+              to={node.fields.slug}
+              css={projectItemImage}
+              style={{ order: 3 }}
+            >
+              {displayImage(node)}
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </Layout>
   );
 }

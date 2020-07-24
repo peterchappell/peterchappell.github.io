@@ -1,6 +1,6 @@
 ---
 title: "My Quality World"
-order: 15
+order: 30
 timeFrame: "2020"
 type: Side project
 url: https://peterchappell.github.io/my-quality-world/

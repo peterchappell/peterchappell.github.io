@@ -37,7 +37,7 @@ const Header = ({ siteTitle }) => (
         Home
       </Link>
       <Link to="/projects" css={mainMenuLink}>
-        Projects
+        My Work
       </Link>
       <Link to="/experience" css={mainMenuLink}>
         Experience
