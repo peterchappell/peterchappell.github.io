@@ -14,7 +14,12 @@ const HeaderImage = () => {
     }
   `);
 
-  return <img src={data.placeholderImage.childImageSharp.fixed.src} />;
+  return (
+    <img
+      src={data.placeholderImage.childImageSharp.fixed.src}
+      alt="Photo of Pete Chappell"
+    />
+  );
 };
 
 export default HeaderImage;

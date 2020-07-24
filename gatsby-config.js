@@ -1,4 +1,4 @@
-const projectImagesHeight = 300;
+const workImagesHeight = 300;
 
 module.exports = {
   siteMetadata: {
@@ -64,8 +64,8 @@ module.exports = {
               linkImagesToOriginal: false,
               wrapperStyle: fluidResult => `
                 display: inline-block;
-                width: ${fluidResult.aspectRatio * projectImagesHeight}px;
-                max-height: ${projectImagesHeight}px;
+                width: ${fluidResult.aspectRatio * workImagesHeight}px;
+                max-height: ${workImagesHeight}px;
                 margin-right: 10px;
                 vertical-align: top;
               `,

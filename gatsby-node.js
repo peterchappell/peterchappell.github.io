@@ -15,8 +15,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
     createNodeField({
       node,
-      name: `isProject`,
-      value: !!slug.match(/^\/projects\/.*$/),
+      name: `isWork`,
+      value: !!slug.match(/^\/work\/.*$/),
     });
   }
 };
@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             fields {
               slug
-              isProject
+              isWork
             }
           }
         }
@@ -39,12 +39,12 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   result.data.allMdx.edges.forEach(({ node }) => {
-    if (!node.fields.isProject) {
+    if (!node.fields.isWork) {
       return;
     }
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/project.js`),
+      component: path.resolve(`./src/templates/work.js`),
       context: {
         slug: node.fields.slug,
       },

@@ -1,7 +1,7 @@
 import { css } from "@emotion/core";
 import { rhythm } from "../utils/typography";
 
-import { projectImagesHeight } from "../utils/consts";
+import { workImagesHeight } from "../utils/consts";
 
 export const gallery = css({
   backgroundColor: "#fafafa",
@@ -13,5 +13,5 @@ export const gallery = css({
 
 export const galleryGrid = css({
   whiteSpace: "nowrap",
-  height: `${projectImagesHeight}px`,
+  height: `${workImagesHeight}px`,
 });

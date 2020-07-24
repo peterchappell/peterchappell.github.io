@@ -31,7 +31,7 @@ const Header = () => (
         Home
       </Link>
       <Link
-        to="/projects"
+        to="/work"
         css={mainMenuLinkStyle}
         activeStyle={{ textDecoration: "underline" }}
         partiallyActive

@@ -46,13 +46,13 @@ const shortcodes = {
   Quote,
 };
 
-export default function Project({ data }) {
+export default function Work({ data }) {
   const project = data.mdx;
 
   return (
     <Layout isContentPadded>
       <header css={headerClass}>
-        <Link to="/projects">My Work</Link>
+        <Link to="/work">My Work</Link>
         <h2>
           {project.frontmatter.type === "Job" ? " @" : ""}
           {project.frontmatter.title}

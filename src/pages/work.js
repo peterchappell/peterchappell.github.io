@@ -8,7 +8,7 @@ import { rhythm } from "../utils/typography";
 export const query = graphql`
   query {
     allMdx(
-      filter: { fileAbsolutePath: { regex: "/(projects)/.*/" } }
+      filter: { fileAbsolutePath: { regex: "/(work)/.*/" } }
       sort: { fields: frontmatter___order }
     ) {
       edges {
@@ -76,7 +76,7 @@ const projectItemMeta = css({
   },
 });
 
-export default function Projects({ data }) {
+export default function Work({ data }) {
   const displayImage = node => {
     if (!node.frontmatter.featuredImage) {
       return null;
