@@ -6,6 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import { mediaQueries } from "../utils/consts";
 
 const section = css({
   alignItems: "center",
@@ -26,6 +27,9 @@ const graphic = css({
   flexShrink: 1,
   height: "100vh",
   justifyContent: "center",
+  [mediaQueries[0]]: {
+    height: `calc(100vh - ${rhythm(6)})`,
+  },
 });
 
 const IndexPage = () => {

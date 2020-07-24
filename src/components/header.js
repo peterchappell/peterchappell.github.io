@@ -1,45 +1,48 @@
 import React from "react";
-import { css } from "@emotion/core";
 import { Link } from "gatsby";
-import { rhythm } from "../utils/typography";
-import Image from "./image";
 
-const headerContainer = css({
-  bottom: 0,
-  left: 0,
-  position: "fixed",
-  padding: rhythm(2),
-  textAlign: "center",
-  top: 0,
-  width: "33.3333%",
-  zIndex: 900,
-});
+import HeaderImage from "./headerImage";
+import {
+  headerContainer,
+  siteTitleLinkStyle,
+  siteTitleStyle,
+  graphicStyle,
+  headerNavStyle,
+  mainMenuLinkStyle,
+} from "./header.styles";
 
-const graphic = css({
-  borderRadius: "50%",
-  margin: `${rhythm(1)} auto`,
-  maxWidth: "50%",
-  overflow: "hidden",
-});
-
-const mainMenuLink = css({
-  display: "block",
-});
-
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header css={headerContainer}>
-    <h1>{siteTitle}</h1>
-    <figure css={graphic}>
-      <Image />
-    </figure>
-    <nav>
-      <Link to="/" css={mainMenuLink}>
+    <Link to="/" css={siteTitleLinkStyle}>
+      <h1 css={siteTitleStyle}>
+        Pete Chappell
+        <em>Portfolio</em>
+      </h1>
+      <figure css={graphicStyle}>
+        <HeaderImage />
+      </figure>
+    </Link>
+    <nav css={headerNavStyle}>
+      <Link
+        to="/"
+        css={mainMenuLinkStyle}
+        activeStyle={{ textDecoration: "underline" }}
+      >
         Home
       </Link>
-      <Link to="/projects" css={mainMenuLink}>
+      <Link
+        to="/projects"
+        css={mainMenuLinkStyle}
+        activeStyle={{ textDecoration: "underline" }}
+        partiallyActive
+      >
         My Work
       </Link>
-      <Link to="/experience" css={mainMenuLink}>
+      <Link
+        to="/experience"
+        css={mainMenuLinkStyle}
+        activeStyle={{ textDecoration: "underline" }}
+      >
         Experience
       </Link>
     </nav>

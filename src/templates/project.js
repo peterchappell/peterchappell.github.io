@@ -52,8 +52,11 @@ export default function Project({ data }) {
   return (
     <Layout isContentPadded>
       <header css={headerClass}>
-        <Link to="/projects">Projects</Link>
-        <h2>{project.frontmatter.title}</h2>
+        <Link to="/projects">My Work</Link>
+        <h2>
+          {project.frontmatter.type === "Job" ? " @" : ""}
+          {project.frontmatter.title}
+        </h2>
         <dl css={metaStyle}>
           <dt>Type</dt>
           <dd>{project.frontmatter.type}</dd>
