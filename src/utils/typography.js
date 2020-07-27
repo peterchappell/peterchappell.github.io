@@ -39,8 +39,5 @@ const themeOptions = {
 
 const typography = new Typography(themeOptions);
 
-console.log("typography", typography);
-console.log("linesForFontSize", typography.linesForFontSize());
-
 export const { scale, rhythm, options } = typography;
 export default typography;

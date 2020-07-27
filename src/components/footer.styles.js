@@ -29,7 +29,6 @@ export const footerListStyle = css({
   listStyleType: "none",
   margin: "0 auto",
   "> li": {
-    flexBasis: "33%",
     margin: 0,
     textAlign: "center",
     [mediaQueries[0]]: {
@@ -39,13 +38,26 @@ export const footerListStyle = css({
 });
 
 export const footerLink = css({
-  display: "block",
-  padding: rhythm(0.25),
+  alignItems: "center",
+  display: "flex",
+  padding: `${rhythm(0.25)} ${rhythm(0.5)}`,
   textDecoration: "none",
   "&:link, &:hover, &:visited, &:active": {
-    color: cssDefaults.bodyTextColour,
+    color: cssDefaults.headingColour,
   },
   "&:hover, &:focus": {
     textDecoration: "underline",
+  },
+});
+
+export const footerIcon = css({
+  height: "1rem",
+  marginRight: "0.25rem",
+  width: "1rem",
+});
+
+export const footerLinkText = css({
+  [mediaQueries[1]]: {
+    fontSize: "12px",
   },
 });

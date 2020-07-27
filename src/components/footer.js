@@ -1,6 +1,16 @@
 import React from "react";
 
-import { footerStyle, footerListStyle, footerLink } from "./footer.styles";
+import EmailIcon from "../images/svg/email.svg";
+import LinkedInIcon from "../images/svg/linkedin.svg";
+import GithubIcon from "../images/svg/github.svg";
+
+import {
+  footerStyle,
+  footerListStyle,
+  footerLink,
+  footerIcon,
+  footerLinkText,
+} from "./footer.styles";
 
 export default function Footer() {
   return (
@@ -13,7 +23,8 @@ export default function Footer() {
             rel="noreferrer"
             css={footerLink}
           >
-            LinkedIn
+            <LinkedInIcon css={footerIcon} ariaHidden="true" />
+            <span css={footerLinkText}>LinkedIn</span>
           </a>
         </li>
         <li>
@@ -23,17 +34,8 @@ export default function Footer() {
             rel="noreferrer"
             css={footerLink}
           >
-            Github
-          </a>
-        </li>
-        <li>
-          <a
-            href="/PeteChappell-CV.pdf"
-            target="_blank"
-            rel="noreferrer"
-            css={footerLink}
-          >
-            CV
+            <GithubIcon css={footerIcon} ariaHidden="true" />
+            <span css={footerLinkText}>Github</span>
           </a>
         </li>
         <li>
@@ -43,7 +45,8 @@ export default function Footer() {
             rel="noreferrer"
             css={footerLink}
           >
-            petechappell@gmail.com
+            <EmailIcon css={footerIcon} ariaHidden="true" />
+            <span css={footerLinkText}>peter@ap3x.com</span>
           </a>
         </li>
       </ul>
