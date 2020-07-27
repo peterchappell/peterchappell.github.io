@@ -13,4 +13,6 @@ export const cssDefaults = {
   primary: "#006D97",
   primaryLight: "#398AB6",
   primaryDark: "#004269",
+  headingColour: "#384955",
+  bodyTextColour: "#1f282f",
 };

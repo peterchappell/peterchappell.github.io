@@ -5,7 +5,7 @@ slug: "range"
 
 ## A broad range of experience
 
-- 10 years experience as a UI designer before shifting focus to front-end engineering.
+- 10 years experience as a UI designer + 10 years front-end engineering experience.
 - Experience working with a wide variety of backend systems, languages and frameworks.
 - Creative thinking and problem solving.
 - Recently completed a Professional Diploma in UX.

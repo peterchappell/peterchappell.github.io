@@ -17,7 +17,8 @@ const HeaderImage = () => {
   return (
     <img
       src={data.placeholderImage.childImageSharp.fixed.src}
-      alt="Photo of Pete Chappell"
+      alt="Pete Chappell"
+      aria-hidden="true"
     />
   );
 };

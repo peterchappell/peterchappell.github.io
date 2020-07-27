@@ -53,10 +53,7 @@ export default function Work({ data }) {
     <Layout isContentPadded>
       <header css={headerClass}>
         <Link to="/work">My Work</Link>
-        <h2>
-          {project.frontmatter.type === "Job" ? " @" : ""}
-          {project.frontmatter.title}
-        </h2>
+        <h2>{project.frontmatter.title}</h2>
         <dl css={metaStyle}>
           <dt>Type</dt>
           <dd>{project.frontmatter.type}</dd>

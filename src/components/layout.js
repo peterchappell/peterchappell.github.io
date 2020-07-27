@@ -2,6 +2,7 @@ import React from "react";
 import { css } from "@emotion/core";
 import { rhythm } from "../utils/typography";
 
+import Footer from "./footer";
 import Header from "./header";
 import "./layout.css";
 import { mediaQueries } from "../utils/consts";
@@ -17,9 +18,10 @@ const Layout = ({ children, isContentPadded }) => {
     minHeight: "100vh",
     padding: isContentPadded ? rhythm(2) : 0,
     [mediaQueries[0]]: {
+      marginBottom: rhythm(1.5),
       marginLeft: 0,
       marginTop: isContentPadded ? rhythm(6) : rhythm(5),
-      minHeight: `calc(100vh - ${rhythm(6)})`,
+      minHeight: `calc(100vh - ${rhythm(7.5)})`,
       padding: isContentPadded ? rhythm(1) : 0,
     },
     [mediaQueries[1]]: {
@@ -31,6 +33,7 @@ const Layout = ({ children, isContentPadded }) => {
     <section css={outerContainer}>
       <Header />
       <main css={mainContainer}>{children}</main>
+      <Footer />
     </section>
   );
 };

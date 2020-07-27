@@ -3,7 +3,9 @@ import Layout from "../components/layout";
 import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { css } from "@emotion/core";
+
 import { rhythm } from "../utils/typography";
+import { cssDefaults } from "../utils/consts";
 
 export const query = graphql`
   query {
@@ -57,9 +59,18 @@ const projectItemImage = css({
 });
 
 const projectItemTitle = css({
+  margin: `${rhythm(0.5)} 0 0`,
   textDecoration: "none",
-  "&:link, &:hover, &:active, &:visited": {
+  "> a": {
+    color: cssDefaults.primary,
     textDecoration: "none",
+    "&:hover, &:focus": {
+      color: cssDefaults.primaryLight,
+      textDecoration: "underline",
+    },
+    "&:active": {
+      color: cssDefaults.primaryDark,
+    },
   },
 });
 
@@ -90,13 +101,9 @@ export default function Work({ data }) {
       <ul css={projectsGrid}>
         {data.allMdx.edges.map(({ node }) => (
           <li key={node.id} css={projectItem}>
-            <Link
-              to={node.fields.slug}
-              css={projectItemTitle}
-              style={{ order: 6 }}
-            >
-              <h3>{node.frontmatter.title}</h3>
-            </Link>
+            <h3 css={projectItemTitle} style={{ order: 6 }}>
+              <Link to={node.fields.slug}>{node.frontmatter.title}</Link>
+            </h3>
             <dl css={projectItemMeta} style={{ order: 9 }}>
               <dt>Type</dt>
               <dd>{node.frontmatter.type}</dd>

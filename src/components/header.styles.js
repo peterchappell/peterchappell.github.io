@@ -27,6 +27,7 @@ export const headerContainer = css({
     width: "auto",
   },
   [mediaQueries[1]]: {
+    backgroundColor: cssDefaults.bg1,
     justifyContent: "center",
     padding: rhythm(0.5),
   },
@@ -87,12 +88,16 @@ export const headerNavStyle = css({
   [mediaQueries[0]]: {
     display: "flex",
   },
+  "@media (max-width: 620px)": {
+    marginLeft: rhythm(3.5),
+  },
   [mediaQueries[1]]: {
-    backgroundColor: cssDefaults.bg3,
+    backgroundColor: cssDefaults.bg2,
     flexDirection: "rows",
     justifyContent: "center",
     height: "40px",
     left: 0,
+    marginLeft: 0,
     position: "fixed",
     right: 0,
     top: rhythm(3),
