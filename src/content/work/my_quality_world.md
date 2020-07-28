@@ -6,7 +6,7 @@ type: Side project
 url: https://peterchappell.github.io/my-quality-world/
 repo: https://github.com/peterchappell/my-quality-world
 excerpt: A proof of concept for how a "my quality world" exercise from Choice Theory (CT) might translate to an app.
-featuredImage: "./my_quality_world/1.jpg"
+featuredImage: "./my_quality_world/cover.jpg"
 ---
 
 The Quality World is a central idea in William Glasser's Choice Theory (CT) of human behaviour.
