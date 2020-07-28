@@ -7,8 +7,11 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { MDXProvider } from "@mdx-js/react";
 
 import Gallery from "../components/gallery";
+import GithubLink from "../components/githubLink";
 import ProjectLink from "../components/projectLink";
 import Quote from "../components/quote";
+import { cssDefaults } from "../utils/consts";
+import BackLinkIcon from "../images/svg/back.svg";
 
 export const query = graphql`
   query($slug: String!) {
@@ -25,18 +28,33 @@ export const query = graphql`
   }
 `;
 
-const headerClass = css({
-  marginBottom: rhythm(2),
+const backLinkStyle = css({
+  alignItems: "center",
+  display: "flex",
+  marginLeft: "-1.25rem",
+  textDecoration: "none",
+});
+
+const backLinkIconStyle = css({
+  height: "1rem",
+  marginRight: "0.25rem",
+  width: "1rem",
+});
+
+const headerStyle = css({
+  marginBottom: rhythm(1),
+});
+
+const headingStyle = css({
+  margin: `${rhythm(1)} 0 0`,
 });
 
 const metaStyle = css({
+  color: cssDefaults.headingColour,
   display: "flex",
-  fontStyle: "italic",
-  "> dd": {
-    marginRight: "1em",
-  },
-  "> dt": {
-    marginRight: "0.5em",
+  fontSize: cssDefaults.smallTextSize,
+  dd: {
+    margin: `0 ${rhythm(0.5)} 0 0`,
   },
 });
 
@@ -51,39 +69,22 @@ export default function Work({ data }) {
 
   return (
     <Layout isContentPadded>
-      <header css={headerClass}>
-        <Link to="/work">My Work</Link>
-        <h2>{project.frontmatter.title}</h2>
+      <header css={headerStyle}>
+        <Link to="/work" css={backLinkStyle}>
+          <BackLinkIcon css={backLinkIconStyle} />
+          My Work
+        </Link>
+        <h2 css={headingStyle}>{project.frontmatter.title}</h2>
         <dl css={metaStyle}>
-          <dt>Type</dt>
-          <dd>{project.frontmatter.type}</dd>
-          <dt>Timeframe</dt>
+          <dt className="sr-only">Timeframe</dt>
           <dd>{project.frontmatter.timeFrame}</dd>
-          {project.frontmatter.url && (
-            <>
-              <dt>URL</dt>
-              <dd>
-                <a
-                  href={project.frontmatter.url}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Link
-                </a>
-              </dd>
-            </>
-          )}
+          <dt className="sr-only">Type</dt>
+          <dd>{project.frontmatter.type}</dd>
           {project.frontmatter.repo && (
             <>
-              <dt>Code</dt>
+              <dt className="sr-only">Code</dt>
               <dd>
-                <a
-                  href={project.frontmatter.repo}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Github
-                </a>
+                <GithubLink url={project.frontmatter.repo} />
               </dd>
             </>
           )}

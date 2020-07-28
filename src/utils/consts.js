@@ -15,4 +15,5 @@ export const cssDefaults = {
   primaryDark: "#004269",
   headingColour: "#384955",
   bodyTextColour: "#1f282f",
+  smallTextSize: "14px",
 };

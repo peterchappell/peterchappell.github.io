@@ -30,7 +30,7 @@ export const metaStyle = css({
   order: 9,
   dd: {
     color: cssDefaults.headingColour,
-    fontSize: "0.8em",
+    fontSize: cssDefaults.smallTextSize,
     margin: `0 ${rhythm(0.5)} 0 0`,
   },
 });

@@ -5,7 +5,7 @@ import { mediaQueries, cssDefaults } from "../utils/consts";
 
 export const footerStyle = css({
   bottom: 0,
-  fontSize: "14px",
+  fontSize: cssDefaults.smallTextSize,
   left: 0,
   padding: rhythm(1),
   position: "fixed",

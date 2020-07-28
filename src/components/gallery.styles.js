@@ -8,7 +8,7 @@ export const gallery = css({
   marginBottom: rhythm(1),
   maxWidth: "100%",
   overflowX: "auto",
-  padding: "10px 10px 20px",
+  padding: "10px 10px 30px",
 });
 
 export const galleryGrid = css({
