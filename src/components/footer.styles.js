@@ -58,6 +58,7 @@ export const footerIcon = css({
 
 export const footerLinkText = css({
   [mediaQueries[1]]: {
-    fontSize: "12px",
+    fontSize: cssDefaults.smallTextSize,
+    lineHeight: cssDefaults.smallTextSize,
   },
 });

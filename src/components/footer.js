@@ -23,7 +23,7 @@ export default function Footer() {
             rel="noreferrer"
             css={footerLink}
           >
-            <LinkedInIcon css={footerIcon} ariaHidden="true" />
+            <LinkedInIcon css={footerIcon} aria-hidden="true" />
             <span css={footerLinkText}>LinkedIn</span>
           </a>
         </li>
@@ -34,7 +34,7 @@ export default function Footer() {
             rel="noreferrer"
             css={footerLink}
           >
-            <GithubIcon css={footerIcon} ariaHidden="true" />
+            <GithubIcon css={footerIcon} aria-hidden="true" />
             <span css={footerLinkText}>Github</span>
           </a>
         </li>
@@ -45,7 +45,7 @@ export default function Footer() {
             rel="noreferrer"
             css={footerLink}
           >
-            <EmailIcon css={footerIcon} ariaHidden="true" />
+            <EmailIcon css={footerIcon} aria-hidden="true" />
             <span css={footerLinkText}>peter@ap3x.com</span>
           </a>
         </li>

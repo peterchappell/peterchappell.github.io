@@ -25,12 +25,18 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const result = await graphql(`
     query {
-      allMdx {
+      allMdx(
+        filter: { fileAbsolutePath: { regex: "/(work)/.*/" } }
+        sort: { fields: frontmatter___order }
+      ) {
         edges {
           node {
             fields {
               slug
               isWork
+            }
+            frontmatter {
+              title
             }
           }
         }
@@ -38,7 +44,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  result.data.allMdx.edges.forEach(({ node }) => {
+  const workItems = result.data.allMdx.edges;
+  workItems.forEach(({ node }, index) => {
     if (!node.fields.isWork) {
       return;
     }
@@ -47,6 +54,14 @@ exports.createPages = async ({ graphql, actions }) => {
       component: path.resolve(`./src/templates/work.js`),
       context: {
         slug: node.fields.slug,
+        prev:
+          index === 0
+            ? workItems[workItems.length - 1].node
+            : workItems[index - 1].node,
+        next:
+          index === workItems.length - 1
+            ? workItems[0].node
+            : workItems[index + 1].node,
       },
     });
   });

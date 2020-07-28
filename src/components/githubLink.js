@@ -26,7 +26,7 @@ export const icon = css({
 export default function GithubLink({ url }) {
   return (
     <a href={url} target="_blank" rel="noreferrer" css={button}>
-      <GithubIcon css={icon} ariaHidden="true" />
+      <GithubIcon css={icon} aria-hidden="true" />
       View the source code
     </a>
   );
