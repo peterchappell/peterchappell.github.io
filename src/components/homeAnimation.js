@@ -34,13 +34,19 @@ const svgElementStyle = css({
 });
 
 const HomeAnimation = props => {
-  const { isRangeInView, isDepthInView, isTShapedInView, isMobile } = props;
+  const {
+    isRangeInView,
+    isDepthInView,
+    isTShapedInView,
+    isMobile,
+    initialStep,
+  } = props;
   const block1AnimationControls = useAnimation();
   const block2AnimationControls = useAnimation();
 
   const spring = {
     type: "spring",
-    damping: 18,
+    damping: 20,
     stiffness: 200,
   };
 
@@ -83,16 +89,34 @@ const HomeAnimation = props => {
       y: 0,
       height: 50,
       width: 50,
+      opacity: 0,
     },
     step5: {
       x: 0,
       y: 0,
       height: 300,
       width: 50,
+      opacity: 1,
     },
   };
 
   useEffect(() => {
+    if (isMobile && initialStep) {
+      block1AnimationControls.start(block1Animations[initialStep]);
+      block2AnimationControls.start(block2AnimationControls.hidden);
+
+      if (isRangeInView) {
+        block1AnimationControls.start(block1Animations.step1);
+        block2AnimationControls.start(block2Animations.hidden);
+      } else if (isDepthInView) {
+        block1AnimationControls.start(block1Animations.step3);
+        block2AnimationControls.start(block2Animations.hidden);
+      } else if (isTShapedInView) {
+        block1AnimationControls.start(block1Animations.step5);
+        block2AnimationControls.start(block2Animations.step5);
+      }
+    }
+
     if (isRangeInView && !isDepthInView) {
       block1AnimationControls.start(block1Animations.step1);
       block2AnimationControls.start(block2Animations.hidden);
@@ -129,7 +153,7 @@ const HomeAnimation = props => {
           x="175"
           y="50"
           fill={cssDefaults.headingColour}
-          opacity={isTShapedInView ? 1 : 0}
+          opacity={0}
           transition={spring}
           animate={block2AnimationControls}
         />

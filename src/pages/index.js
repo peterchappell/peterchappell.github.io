@@ -80,8 +80,11 @@ const IndexPage = () => {
   `);
 
   const [rangeRef, isRangeInView] = useInView({ threshold: 0.3 });
+  const [mobileRangeRef, isMobileRangeInView] = useInView();
   const [depthRef, isDepthInView] = useInView({ threshold: 0.3 });
+  const [mobileDepthRef, isMobileDepthInView] = useInView();
   const [tShapedRef, isTShapedInView] = useInView({ threshold: 0.3 });
+  const [mobileTShapedRef, isMobileTShapedInView] = useInView();
 
   const mappedData = data.allMdx.nodes.reduce((accumulator, itemObj) => {
     accumulator[itemObj.frontmatter.slug] = itemObj;
@@ -101,11 +104,12 @@ const IndexPage = () => {
         </div>
         <div css={columnStyle}>
           <article id="range" css={sectionStyle}>
-            <div css={mobileAnimation}>
+            <div css={mobileAnimation} ref={mobileRangeRef}>
               <HomeAnimation
-                isRangeInView={isRangeInView}
-                isDepthInView={isDepthInView}
-                isTShapedInView={isTShapedInView}
+                isRangeInView={isMobileRangeInView}
+                isDepthInView={isMobileDepthInView}
+                isTShapedInView={isMobileTShapedInView}
+                initialStep="step1"
                 isMobile
               />
             </div>
@@ -114,11 +118,12 @@ const IndexPage = () => {
             </div>
           </article>
           <article id="depth" css={sectionStyle}>
-            <div css={mobileAnimation}>
+            <div css={mobileAnimation} ref={mobileDepthRef}>
               <HomeAnimation
-                isRangeInView={isRangeInView}
-                isDepthInView={isDepthInView}
-                isTShapedInView={isTShapedInView}
+                isRangeInView={isMobileRangeInView}
+                isDepthInView={isMobileDepthInView}
+                isTShapedInView={isMobileTShapedInView}
+                initialStep="step2"
                 isMobile
               />
             </div>
@@ -127,11 +132,12 @@ const IndexPage = () => {
             </div>
           </article>
           <article id="tshaped" css={sectionStyle}>
-            <div css={mobileAnimation}>
+            <div css={mobileAnimation} ref={mobileTShapedRef}>
               <HomeAnimation
-                isRangeInView={isRangeInView}
-                isDepthInView={isDepthInView}
-                isTShapedInView={isTShapedInView}
+                isRangeInView={isMobileRangeInView}
+                isDepthInView={isMobileDepthInView}
+                isTShapedInView={isMobileTShapedInView}
+                initialStep="step4"
                 isMobile
               />
             </div>
