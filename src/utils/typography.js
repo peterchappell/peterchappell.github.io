@@ -20,7 +20,7 @@ const themeOptions = {
   headerColor: cssDefaults.headingColour,
   headerFontFamily: ["Source Serif Pro", "serif"],
   headerWeight: "500",
-  scaleRatio: 2.2,
+  scaleRatio: 2.5,
   overrideStyles: () => ({
     h4: {
       fontSize: "1.2rem",

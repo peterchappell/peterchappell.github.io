@@ -61,7 +61,10 @@ const sectionStyle = css({
 });
 
 const sectionContentStyle = css({
-  padding: `0 ${rhythm(1)} 0 0`,
+  padding: `0 ${rhythm(2)} 0 0`,
+  ul: {
+    marginBottom: 0,
+  },
 });
 
 const IndexPage = () => {

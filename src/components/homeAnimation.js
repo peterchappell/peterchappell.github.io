@@ -12,6 +12,7 @@ const containerStyle = css({
   justifyContent: "center",
   left: `calc(33.3333%) + ${rhythm(1)}`,
   padding: `${rhythm(1)} ${rhythm(2)}`,
+  pointerEvents: "none",
   position: "fixed",
   top: 0,
   width: "33.3333%",
@@ -133,7 +134,7 @@ const HomeAnimation = props => {
       block1AnimationControls.start(block1Animations.step5);
       block2AnimationControls.start(block2Animations.step5);
     }
-  }, [isRangeInView, isDepthInView, isTShapedInView]);
+  });
 
   return (
     <div css={isMobile ? mobileContainerStyle : containerStyle}>

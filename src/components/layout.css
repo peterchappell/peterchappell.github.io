@@ -3,6 +3,14 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
   height: 100%;
 }
 
+html {
+  overflow: hidden;
+}
+
+body {
+  overflow: auto;
+}
+
 @media(max-width: 781px) {
   html, body {
     scroll-padding-top: 130px;
@@ -11,8 +19,7 @@ html, body, #___gatsby, #gatsby-focus-wrapper {
 
 @media(max-width: 501px) {
   html, body {
-    scroll-snap-type: y proximity;
-    scroll-padding-top: 118px;
+    scroll-snap-type: none;
   }
 }
 
