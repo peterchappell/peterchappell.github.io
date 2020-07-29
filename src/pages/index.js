@@ -13,6 +13,7 @@ import { mediaQueries } from "../utils/consts";
 const containerStyle = css({
   alignItems: "center",
   display: "flex",
+  marginBottom: rhythm(2),
   [mediaQueries[1]]: {
     display: "block",
     padding: rhythm(1),
@@ -46,12 +47,16 @@ const sectionStyle = css({
   display: "flex",
   flexShrink: 1,
   minHeight: "100vh",
+  scrollSnapAlign: "start",
+  scrollSnapStop: "normal",
   [mediaQueries[0]]: {
     minHeight: `calc(100vh - ${rhythm(7)})`,
   },
   [mediaQueries[1]]: {
     display: "block",
     minHeight: "auto",
+    scrollSnapAlign: "none",
+    scrollSnapType: "unset",
   },
 });
 

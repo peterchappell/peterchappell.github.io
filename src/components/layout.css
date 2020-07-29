@@ -1,5 +1,19 @@
 html, body, #___gatsby, #gatsby-focus-wrapper {
+  scroll-snap-type: y mandatory;
   height: 100%;
+}
+
+@media(max-width: 781px) {
+  html, body {
+    scroll-padding-top: 130px;
+  }
+}
+
+@media(max-width: 501px) {
+  html, body {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 118px;
+  }
 }
 
 .sr-only {
