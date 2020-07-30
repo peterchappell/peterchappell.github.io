@@ -88,6 +88,7 @@ const metaStyle = css({
   marginTop: rhythm(0.25),
   dd: {
     margin: `0 ${rhythm(0.5)} 0 0`,
+    whiteSpace: "nowrap",
   },
 });
 

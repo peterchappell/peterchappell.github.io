@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
+import { cssDefaults } from "../utils/consts";
 import HeaderImage from "./headerImage";
 import {
   headerContainer,
@@ -10,6 +11,10 @@ import {
   headerNavStyle,
   mainMenuLinkStyle,
 } from "./header.styles";
+
+const activeStyle = {
+  textDecoration: "underline",
+};
 
 const Header = () => (
   <header css={headerContainer}>
@@ -23,26 +28,18 @@ const Header = () => (
       </figure>
     </Link>
     <nav css={headerNavStyle}>
-      <Link
-        to="/"
-        css={mainMenuLinkStyle}
-        activeStyle={{ textDecoration: "underline" }}
-      >
+      <Link to="/" css={mainMenuLinkStyle} activeStyle={activeStyle}>
         Home
       </Link>
       <Link
         to="/work"
         css={mainMenuLinkStyle}
-        activeStyle={{ textDecoration: "underline" }}
+        activeStyle={activeStyle}
         partiallyActive
       >
         My Work
       </Link>
-      <Link
-        to="/experience"
-        css={mainMenuLinkStyle}
-        activeStyle={{ textDecoration: "underline" }}
-      >
+      <Link to="/experience" css={mainMenuLinkStyle} activeStyle={activeStyle}>
         Experience
       </Link>
     </nav>

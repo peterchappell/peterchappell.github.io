@@ -6,7 +6,7 @@ export const containerStyle = css({
   display: "flex",
   flexDirection: "row-reverse",
   margin: `${rhythm(2)} 0`,
-  maxWidth: "700px",
+  maxWidth: "620px",
 });
 
 export const contentStyle = css({

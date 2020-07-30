@@ -51,7 +51,7 @@ export const siteTitleStyle = css({
   "> em": {
     display: "block",
     fontSize: "1.37078rem",
-    fontStyle: "normal",
+    fontWeight: 300,
   },
   [mediaQueries[0]]: {
     order: 2,
@@ -90,7 +90,7 @@ export const headerNavStyle = css({
   [mediaQueries[0]]: {
     display: "flex",
   },
-  "@media (max-width: 620px)": {
+  "@media (max-width: 650px)": {
     marginLeft: rhythm(3.5),
   },
   [mediaQueries[1]]: {
@@ -109,8 +109,7 @@ export const headerNavStyle = css({
 export const mainMenuLinkStyle = css({
   alignItems: "center",
   display: "flex",
-  fontFamily: ["Source Serif Pro", "serif"],
-  fontSize: "1.2rem",
+  fontWeight: 500,
   justifyContent: "center",
   padding: `${rhythm(0.25)} ${rhythm(0.5)}`,
   whiteSpace: "nowrap",

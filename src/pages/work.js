@@ -41,7 +41,7 @@ export const query = graphql`
 const projectsGridStyle = css({
   display: "grid",
   gridGap: rhythm(2),
-  gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+  gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
   gridAutoRows: "minmax(100px, auto)",
   margin: 0,
 });
