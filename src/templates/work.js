@@ -31,13 +31,10 @@ export const query = graphql`
 const backLinkStyle = css({
   alignItems: "center",
   display: "flex",
-  marginLeft: "-1.25rem",
+  marginLeft: "-0.25rem",
   textDecoration: "none",
   "&:hover, &:focus, &:active": {
     textDecoration: "underline",
-  },
-  [mediaQueries[1]]: {
-    marginLeft: "-0.25rem",
   },
 });
 
@@ -64,6 +61,7 @@ const footerStyle = css({
 const footerNavStyle = css({
   display: "flex",
   justifyContent: "space-between",
+  marginLeft: "-0.25rem",
 });
 
 const footerLinkStyle = css({

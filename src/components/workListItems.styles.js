@@ -3,25 +3,25 @@ import { rhythm } from "../utils/typography";
 import { cssDefaults } from "../utils/consts";
 
 export const containerStyle = css({
+  display: "block",
+});
+
+export const linkContainerStyle = css({
   display: "flex",
   flexDirection: "column",
+  "&:link, &:hover, &:focus, &:active": {
+    textDecoration: "none",
+  },
+  "&:hover h3, &:focus h3": {
+    textDecoration: "underline",
+  },
 });
 
 export const titleStyle = css({
   margin: `${rhythm(0.5)} 0 0`,
   order: 6,
   textDecoration: "none",
-  "> a": {
-    color: cssDefaults.primary,
-    textDecoration: "none",
-    "&:hover, &:focus": {
-      color: cssDefaults.primaryLight,
-      textDecoration: "underline",
-    },
-    "&:active": {
-      color: cssDefaults.primaryDark,
-    },
-  },
+  color: cssDefaults.primary,
 });
 
 export const metaStyle = css({

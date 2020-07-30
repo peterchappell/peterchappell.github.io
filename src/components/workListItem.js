@@ -7,6 +7,7 @@ import {
   titleStyle,
   metaStyle,
   imageContainerStyle,
+  linkContainerStyle,
 } from "./workListItems.styles";
 
 export default function WorkListItem(props) {
@@ -21,17 +22,15 @@ export default function WorkListItem(props) {
 
   return (
     <TagName css={containerStyle}>
-      <h3 css={titleStyle}>
-        <Link to={slug}>{title}</Link>
-      </h3>
-      <dl css={metaStyle}>
-        <dt className="sr-only">Timeframe</dt>
-        <dd>{timeFrame}</dd>
-        <dt className="sr-only">Type</dt>
-        <dd>{type}</dd>
-      </dl>
-      <Link to={slug} css={imageContainerStyle}>
-        {displayImage(featuredImageData)}
+      <Link to={slug} css={linkContainerStyle}>
+        <h3 css={titleStyle}>{title}</h3>
+        <dl css={metaStyle}>
+          <dt className="sr-only">Timeframe</dt>
+          <dd>{timeFrame}</dd>
+          <dt className="sr-only">Type</dt>
+          <dd>{type}</dd>
+        </dl>
+        <div css={imageContainerStyle}>{displayImage(featuredImageData)}</div>
       </Link>
     </TagName>
   );
