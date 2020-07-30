@@ -10,7 +10,7 @@ import Gallery from "../components/gallery";
 import GithubLink from "../components/githubLink";
 import ProjectLink from "../components/projectLink";
 import Quote from "../components/quote";
-import { cssDefaults, mediaQueries } from "../utils/consts";
+import { cssDefaults } from "../utils/consts";
 import BackLinkIcon from "../images/svg/back.svg";
 import ForwardLinkIcon from "../images/svg/forward.svg";
 

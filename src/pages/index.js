@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
-import { css } from "@emotion/core";
+import { css, keyframes } from "@emotion/core";
 import { rhythm } from "../utils/typography";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { useInView } from "react-intersection-observer";
@@ -8,7 +8,10 @@ import { useInView } from "react-intersection-observer";
 import HomeAnimation from "../components/homeAnimation";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import { mediaQueries } from "../utils/consts";
+import { cssDefaults, mediaQueries } from "../utils/consts";
+import HomeMoreArrowIcon from "../images/svg/homeMoreArrow.svg";
+
+const arrowOpacity = 0.25;
 
 const containerStyle = css({
   alignItems: "center",
@@ -67,6 +70,51 @@ const sectionContentStyle = css({
   },
 });
 
+const scrollPromptBounce = keyframes({
+  "from, 20%, 53%, 80%, to": {
+    transform: "translate3d(0,0,0)",
+  },
+  "40%, 43%": {
+    transform: "translate3d(0, -20px, 0)",
+  },
+  "70%": {
+    transform: "translate3d(0, -10px, 0)",
+  },
+  "90%": {
+    transform: "translate3d(0, -2px, 0)",
+  },
+});
+
+const scrollPromptStyle = css({
+  background: "none",
+  border: "none",
+  bottom: "20px",
+  color: cssDefaults.headingColour,
+  cursor: "pointer",
+  left: "calc(66.6666% - 50px)",
+  opacity: 0,
+  position: "fixed",
+  width: "100px",
+  "&:focus": {
+    outline: "none",
+  },
+  [mediaQueries[0]]: {
+    bottom: "40px",
+    left: "calc(50% - 35px)",
+    width: "70px",
+  },
+  [mediaQueries[1]]: {
+    display: "none",
+  },
+});
+
+const showScrollPrompt = css({
+  opacity: arrowOpacity,
+  transition: "opacity 1s",
+  animation: `${scrollPromptBounce} 1s ease infinite`,
+  animationDelay: "3s",
+});
+
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query AboutContent {
@@ -88,11 +136,33 @@ const IndexPage = () => {
   const [mobileDepthRef, isMobileDepthInView] = useInView();
   const [tShapedRef, isTShapedInView] = useInView({ threshold: 0.3 });
   const [mobileTShapedRef, isMobileTShapedInView] = useInView();
+  const depthScrollRef = useRef();
+  const tShapedScrollRef = useRef();
+  const [isPromptShowing, setIsPromptShowing] = useState(true);
 
   const mappedData = data.allMdx.nodes.reduce((accumulator, itemObj) => {
     accumulator[itemObj.frontmatter.slug] = itemObj;
     return accumulator;
   }, {});
+
+  const handleArrowClick = event => {
+    event.preventDefault();
+    if (isRangeInView) {
+      depthScrollRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (isDepthInView) {
+      tShapedScrollRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    if (isDepthInView && !isRangeInView && !isTShapedInView) {
+      setIsPromptShowing(true);
+    } else if (isRangeInView && !isDepthInView && !isTShapedInView) {
+      setIsPromptShowing(true);
+    } else {
+      setIsPromptShowing(false);
+    }
+  }, [isDepthInView, isRangeInView, isTShapedInView]);
 
   return (
     <Layout>
@@ -107,7 +177,7 @@ const IndexPage = () => {
         </div>
         <div css={columnStyle}>
           <article id="range" css={sectionStyle}>
-            <div css={mobileAnimation} ref={mobileRangeRef}>
+            <div css={mobileAnimation} ref={mobileRangeRef} aria-hidden="true">
               <HomeAnimation
                 isRangeInView={isMobileRangeInView}
                 isDepthInView={isMobileDepthInView}
@@ -120,8 +190,8 @@ const IndexPage = () => {
               <MDXRenderer>{mappedData.range.body}</MDXRenderer>
             </div>
           </article>
-          <article id="depth" css={sectionStyle}>
-            <div css={mobileAnimation} ref={mobileDepthRef}>
+          <article id="depth" css={sectionStyle} ref={depthScrollRef}>
+            <div css={mobileAnimation} ref={mobileDepthRef} aria-hidden="true">
               <HomeAnimation
                 isRangeInView={isMobileRangeInView}
                 isDepthInView={isMobileDepthInView}
@@ -134,8 +204,12 @@ const IndexPage = () => {
               <MDXRenderer>{mappedData.depth.body}</MDXRenderer>
             </div>
           </article>
-          <article id="tshaped" css={sectionStyle}>
-            <div css={mobileAnimation} ref={mobileTShapedRef}>
+          <article id="tshaped" css={sectionStyle} ref={tShapedScrollRef}>
+            <div
+              css={mobileAnimation}
+              ref={mobileTShapedRef}
+              aria-hidden="true"
+            >
               <HomeAnimation
                 isRangeInView={isMobileRangeInView}
                 isDepthInView={isMobileDepthInView}
@@ -150,6 +224,13 @@ const IndexPage = () => {
           </article>
         </div>
       </div>
+      <button
+        css={[scrollPromptStyle, isPromptShowing ? showScrollPrompt : null]}
+        aria-hidden="true"
+        onClick={handleArrowClick}
+      >
+        <HomeMoreArrowIcon />
+      </button>
     </Layout>
   );
 };

@@ -10,3 +10,4 @@ slug: "range"
 - Creative thinking and problem solving.
 - Recently completed a professional diploma in UX.
 - Great communication and time management skills.
+- Diploma in Counselling and Psychotherapeutic studies.

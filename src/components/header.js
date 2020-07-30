@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import { cssDefaults } from "../utils/consts";
 import HeaderImage from "./headerImage";
 import {
   headerContainer,
