@@ -85,6 +85,7 @@ const metaStyle = css({
   color: cssDefaults.headingColour,
   display: "flex",
   fontSize: cssDefaults.smallTextSize,
+  marginTop: rhythm(0.25),
   dd: {
     margin: `0 ${rhythm(0.5)} 0 0`,
   },
