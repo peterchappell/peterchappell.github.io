@@ -18,7 +18,7 @@ const Layout = ({ children, isContentPadded }) => {
     minHeight: "100vh",
     padding: isContentPadded ? rhythm(2) : 0,
     [mediaQueries[0]]: {
-      marginBottom: rhythm(1.5),
+      marginBottom: rhythm(4),
       marginLeft: 0,
       marginTop: isContentPadded ? rhythm(6) : rhythm(5),
       minHeight: `calc(100vh - ${rhythm(7.5)})`,
