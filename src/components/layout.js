@@ -4,7 +4,7 @@ import { rhythm } from "../utils/typography";
 
 import Footer from "./footer";
 import Header from "./header";
-import "./layout.css";
+import "../css/layout.css";
 import { mediaQueries } from "../utils/consts";
 
 const Layout = ({ children, isContentPadded }) => {

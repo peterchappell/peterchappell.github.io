@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { css } from "@emotion/core";
 
 import HeaderImage from "./headerImage";
 import {
@@ -10,10 +11,7 @@ import {
   headerNavStyle,
   mainMenuLinkStyle,
 } from "./header.styles";
-
-const activeStyle = {
-  textDecoration: "underline",
-};
+import { cssDefaults, mediaQueries } from "../utils/consts";
 
 const Header = () => (
   <header css={headerContainer}>
@@ -27,18 +25,22 @@ const Header = () => (
       </figure>
     </Link>
     <nav css={headerNavStyle}>
-      <Link to="/" css={mainMenuLinkStyle} activeStyle={activeStyle}>
+      <Link to="/" css={mainMenuLinkStyle} activeClassName="activeMenuItem">
         Home
       </Link>
       <Link
         to="/work"
         css={mainMenuLinkStyle}
-        activeStyle={activeStyle}
+        activeClassName="activeMenuItem"
         partiallyActive
       >
         My Work
       </Link>
-      <Link to="/experience" css={mainMenuLinkStyle} activeStyle={activeStyle}>
+      <Link
+        to="/experience"
+        css={mainMenuLinkStyle}
+        activeClassName="activeMenuItem"
+      >
         Experience
       </Link>
     </nav>

@@ -90,6 +90,12 @@ const metaStyle = css({
   },
 });
 
+const contentStyle = css({
+  p: {
+    maxWidth: "700px",
+  },
+});
+
 const shortcodes = {
   Gallery,
   ProjectLink,
@@ -125,7 +131,7 @@ export default function Work({ data, pageContext }) {
         </dl>
       </header>
 
-      <div>
+      <div css={contentStyle}>
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{project.body}</MDXRenderer>
         </MDXProvider>

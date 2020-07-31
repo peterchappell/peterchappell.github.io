@@ -29,9 +29,8 @@ export const headerContainer = css({
     width: "auto",
   },
   [mediaQueries[1]]: {
-    backgroundColor: cssDefaults.bg1,
-    justifyContent: "center",
-    padding: rhythm(0.5),
+    flexDirection: "column",
+    padding: 0,
   },
 });
 
@@ -44,6 +43,10 @@ export const siteTitleLinkStyle = css({
     alignItems: "center",
     flexDirection: "row",
   },
+  [mediaQueries[1]]: {
+    padding: rhythm(0.5),
+    width: "100%",
+  },
 });
 
 export const siteTitleStyle = css({
@@ -51,14 +54,14 @@ export const siteTitleStyle = css({
   "> em": {
     display: "block",
     fontSize: "1.37078rem",
+    fontStyle: "normal",
     fontWeight: 300,
   },
   [mediaQueries[0]]: {
     order: 2,
   },
   [mediaQueries[1]]: {
-    fontSize: "1.37078rem",
-    textAlign: "center",
+    fontSize: "1.62671rem",
     "> em": {
       fontSize: "1rem",
     },
@@ -94,15 +97,13 @@ export const headerNavStyle = css({
     marginLeft: rhythm(3.5),
   },
   [mediaQueries[1]]: {
-    backgroundColor: cssDefaults.bg2,
+    backgroundColor: cssDefaults.primary,
     flexDirection: "rows",
     justifyContent: "center",
-    height: "40px",
+    height: cssDefaults.mobileBarHeight,
     left: 0,
     marginLeft: 0,
-    position: "fixed",
-    right: 0,
-    top: rhythm(3),
+    width: "100%",
   },
 });
 
@@ -118,5 +119,21 @@ export const mainMenuLinkStyle = css({
   },
   "&:hover": {
     textDecoration: "underline",
+  },
+  [mediaQueries[1]]: {
+    borderBottom: `5px solid ${cssDefaults.primary}`,
+    color: "#fff",
+    flexBasis: "33.3333%",
+    padding: `${rhythm(0.25)} ${rhythm(0.25)} calc(${rhythm(0.25)} - 5px)`,
+    textAlign: "center",
+    "&:link, &:active, &:visited, &:hover": {
+      color: "#fff",
+    },
+    "&:hover": {
+      textDecoration: "none",
+    },
+    "&:active": {
+      backgroundColor: cssDefaults.primaryDark,
+    },
   },
 });

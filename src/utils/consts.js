@@ -16,4 +16,5 @@ export const cssDefaults = {
   headingColour: "#384955",
   bodyTextColour: "#1f282f",
   smallTextSize: "14px",
+  mobileBarHeight: "44px",
 };

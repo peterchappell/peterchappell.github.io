@@ -7,6 +7,7 @@ const quoteStyle = css({
   borderLeft: `5px solid ${cssDefaults.bg2}`,
   padding: `${rhythm(0.5)} ${rhythm(1)}`,
   margin: `${rhythm(1)} 0`,
+  maxWidth: "700px",
 });
 
 const quoteTextStyle = css({
