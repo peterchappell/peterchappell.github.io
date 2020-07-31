@@ -5,6 +5,7 @@ import { css } from "@emotion/core";
 
 import WorkListItem from "../components/workListItem";
 import { rhythm } from "../utils/typography";
+import SEO from "../components/seo";
 
 export const query = graphql`
   query {
@@ -49,6 +50,10 @@ const projectsGridStyle = css({
 export default function Work({ data }) {
   return (
     <Layout isContentPadded>
+      <SEO
+        title="My Work"
+        description="Some of the projects and jobs Pete Chappell been working on."
+      />
       <h2>My Work</h2>
       <ul css={projectsGridStyle}>
         {data.allMdx.edges.map(({ node }) => (

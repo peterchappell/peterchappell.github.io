@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import { css } from "@emotion/core";
 
 import ExperienceItem from "../components/experienceItem";
+import SEO from "../components/seo";
 
 export const query = graphql`
   query Data {
@@ -33,6 +34,10 @@ const experienceList = css({
 export default function Experience({ data }) {
   return (
     <Layout isContentPadded>
+      <SEO
+        title="Experience"
+        description="Work experience and qualifications for Pete Chappell."
+      />
       <h2>Experience</h2>
       <ul css={experienceList}>
         {data.allExperienceCsv.edges.map(({ node: experienceItemData }) => (

@@ -38,8 +38,8 @@ module.exports = {
         name: `Pete Chappell Portfolio`,
         short_name: `Pete Chappell`,
         start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#ffffff`,
+        background_color: `#ebeff2`,
+        theme_color: `#006D97`,
         display: `minimal-ui`,
         icon: `src/images/petechappell.jpg`, // This path is relative to the root of the site.
       },
@@ -89,8 +89,6 @@ module.exports = {
         },
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "gatsby";
-import { css } from "@emotion/core";
 
 import HeaderImage from "./headerImage";
 import {
@@ -11,7 +10,6 @@ import {
   headerNavStyle,
   mainMenuLinkStyle,
 } from "./header.styles";
-import { cssDefaults, mediaQueries } from "../utils/consts";
 
 const Header = () => (
   <header css={headerContainer}>
