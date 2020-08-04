@@ -10,7 +10,7 @@
     "portfolio",
     "website",
     "gatsby"
-  ],
+  ], ,
   "author": "Pete Chappell",
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -47,6 +47,7 @@
     "typography-theme-st-annes": "^0.16.19"
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "prettier": "2.0.5"
   },
   "license": "0BSD",
@@ -57,6 +58,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "deploy": "gatsby build && gh-pages -d public -b master"
   }
 }
