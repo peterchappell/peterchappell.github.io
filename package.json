@@ -10,7 +10,7 @@
     "portfolio",
     "website",
     "gatsby"
-  ], ,
+  ],
   "author": "Pete Chappell",
   "dependencies": {
     "@emotion/core": "^10.0.28",
