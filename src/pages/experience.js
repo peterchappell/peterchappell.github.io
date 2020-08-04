@@ -5,6 +5,7 @@ import { css } from "@emotion/core";
 
 import ExperienceItem from "../components/experienceItem";
 import SEO from "../components/seo";
+import PDFIcon from "../images/svg/pdf.svg";
 
 export const query = graphql`
   query Data {
@@ -31,6 +32,15 @@ const experienceList = css({
   margin: 0,
 });
 
+const cvLinkStyle = css({
+  display: "flex",
+});
+
+const pdfIconStyle = css({
+  height: "25px",
+  marginRight: "5px",
+});
+
 export default function Experience({ data }) {
   return (
     <Layout isContentPadded>
@@ -39,6 +49,12 @@ export default function Experience({ data }) {
         description="Work experience and qualifications for Pete Chappell."
       />
       <h2>Experience</h2>
+      <p>
+        <a href="/PeteChappell_CV.pdf" css={cvLinkStyle}>
+          <PDFIcon css={pdfIconStyle} />
+          Download a copy of my CV
+        </a>
+      </p>
       <ul css={experienceList}>
         {data.allExperienceCsv.edges.map(({ node: experienceItemData }) => (
           <ExperienceItem
