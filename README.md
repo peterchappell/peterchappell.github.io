@@ -1,14 +1,20 @@
-# peterchappell.github.io
-Portfolio website
+A gatsby built website for my portfolio.
 
-To run locally:
-
-```
-bundle exec jekyll serve
-```
-
-To build:
+- `gatsby develop` to run locally in developer mode.
+- `gatsby build` to build
 
 ```
-bundle exec jekyll build
+    .
+    ├── src
+        └─ components
+        └─ content
+            └─ about        // markdown files for the different sections
+            └─ experience   // csv file for the entries
+            └─ projects     // markdown files for each project
+        └─ images
+        └─ pages
+        └─ templates
+        └─ utils
+    ├── gatsby-config.js    // set up the plugins etc
+    ├── gatsby-node.js      // create slugs for md files and build pages for projects
 ```
