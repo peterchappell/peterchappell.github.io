@@ -34,12 +34,12 @@ const iconStyle = css({
   width: "2rem",
 });
 
-export default function ProjectLink({ url }) {
+export default function ProjectLink({ url, text }) {
   return (
     <div css={container}>
       <a href={url} target="_blank" rel="noreferrer" css={button}>
         <ForwardIcon css={iconStyle} />
-        View the project
+        {text || "View the project"}
       </a>
     </div>
   );

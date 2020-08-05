@@ -8,6 +8,7 @@ import { MDXProvider } from "@mdx-js/react";
 
 import Gallery from "../components/gallery";
 import GithubLink from "../components/githubLink";
+import PDFLink from "../components/pdfLink";
 import ProjectLink from "../components/projectLink";
 import Quote from "../components/quote";
 import { cssDefaults } from "../utils/consts";
@@ -98,6 +99,7 @@ const contentStyle = css({
 
 const shortcodes = {
   Gallery,
+  PDFLink,
   ProjectLink,
   Quote,
 };

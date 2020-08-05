@@ -4,8 +4,8 @@ import { graphql } from "gatsby";
 import { css } from "@emotion/core";
 
 import ExperienceItem from "../components/experienceItem";
+import PDFLink from "../components/pdfLink";
 import SEO from "../components/seo";
-import PDFIcon from "../images/svg/pdf.svg";
 
 export const query = graphql`
   query Data {
@@ -32,15 +32,6 @@ const experienceList = css({
   margin: 0,
 });
 
-const cvLinkStyle = css({
-  display: "flex",
-});
-
-const pdfIconStyle = css({
-  height: "25px",
-  marginRight: "5px",
-});
-
 export default function Experience({ data }) {
   return (
     <Layout isContentPadded>
@@ -49,12 +40,10 @@ export default function Experience({ data }) {
         description="Work experience and qualifications for Pete Chappell."
       />
       <h2>Experience</h2>
-      <p>
-        <a href="/PeteChappell_CV.pdf" css={cvLinkStyle}>
-          <PDFIcon css={pdfIconStyle} />
-          Download a copy of my CV
-        </a>
-      </p>
+      <PDFLink
+        path="/docs/PeteChappell_CV.pdf"
+        text="Download a copy of my CV"
+      />
       <ul css={experienceList}>
         {data.allExperienceCsv.edges.map(({ node: experienceItemData }) => (
           <ExperienceItem
