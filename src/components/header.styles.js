@@ -93,9 +93,6 @@ export const headerNavStyle = css({
   [mediaQueries[0]]: {
     display: "flex",
   },
-  "@media (max-width: 650px)": {
-    marginLeft: rhythm(3.5),
-  },
   [mediaQueries[1]]: {
     backgroundColor: cssDefaults.primary,
     flexDirection: "rows",

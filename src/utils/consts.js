@@ -1,6 +1,6 @@
 export const workImagesHeight = 300;
 
-export const breakpoints = [780, 500];
+export const breakpoints = [1024, 650];
 
 export const mediaQueries = breakpoints.map(
   bp => `@media (max-width: ${bp + 1}px)`

@@ -15,9 +15,12 @@ export const footerStyle = css({
     alignItems: "center",
     backgroundColor: cssDefaults.bg2,
     display: "flex",
-    height: cssDefaults.mobileBarHeight,
+    height: rhythm(2),
     padding: 0,
     width: "100%",
+  },
+  [mediaQueries[1]]: {
+    height: cssDefaults.mobileBarHeight,
   },
 });
 

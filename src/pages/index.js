@@ -53,10 +53,12 @@ const sectionStyle = css({
   scrollSnapAlign: "start",
   scrollSnapStop: "normal",
   [mediaQueries[0]]: {
+    marginBottom: rhythm(2),
     minHeight: `calc(100vh - ${rhythm(7)})`,
   },
   [mediaQueries[1]]: {
     display: "block",
+    marginBottom: 0,
     minHeight: "auto",
     scrollSnapAlign: "none",
     scrollSnapType: "unset",
@@ -99,7 +101,7 @@ const scrollPromptStyle = css({
     outline: "none",
   },
   [mediaQueries[0]]: {
-    bottom: "40px",
+    bottom: "60px",
     left: "calc(50% - 35px)",
     width: "70px",
   },
@@ -131,11 +133,13 @@ const IndexPage = () => {
   `);
 
   const [rangeRef, isRangeInView] = useInView({ threshold: 0.3 });
-  const [mobileRangeRef, isMobileRangeInView] = useInView();
+  const [mobileRangeRef, isMobileRangeInView] = useInView({ threshold: 0.5 });
   const [depthRef, isDepthInView] = useInView({ threshold: 0.3 });
-  const [mobileDepthRef, isMobileDepthInView] = useInView();
+  const [mobileDepthRef, isMobileDepthInView] = useInView({ threshold: 0.5 });
   const [tShapedRef, isTShapedInView] = useInView({ threshold: 0.3 });
-  const [mobileTShapedRef, isMobileTShapedInView] = useInView();
+  const [mobileTShapedRef, isMobileTShapedInView] = useInView({
+    threshold: 0.5,
+  });
   const depthScrollRef = useRef();
   const tShapedScrollRef = useRef();
   const [isPromptShowing, setIsPromptShowing] = useState(true);

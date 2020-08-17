@@ -17,6 +17,8 @@ const containerStyle = css({
   top: 0,
   width: "33.3333%",
   [mediaQueries[0]]: {
+    paddingBottom: rhythm(2),
+    paddingTop: rhythm(5),
     width: "50%",
   },
 });

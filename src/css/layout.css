@@ -11,7 +11,7 @@ body {
   overflow: auto;
 }
 
-@media(max-width: 781px) {
+@media(max-width: 1025px) {
   html, body {
     scroll-padding-top: 130px;
   }
